@@ -8,7 +8,8 @@ using System.Net.Http;
 using System.Net;
 using Windows.System.Threading;
 using Windows.Devices.Pwm;
-
+using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace Billy //builtin.intent
 {
@@ -62,63 +63,100 @@ namespace Billy //builtin.intent
             query = "";
         }
 
+        private static string StripHTML(string HTMLText, bool decode = true)
+        {
+            Regex reg = new Regex("<[^>]+>", RegexOptions.IgnoreCase);
+            var stripped = reg.Replace(HTMLText, "");
+            return decode ? System.Net.WebUtility.HtmlDecode(stripped) : stripped;
+        }
+
+        static string UppercaseWords(string value)
+        {
+            char[] array = value.ToCharArray();
+            // Handle the first letter in the string.
+            if (array.Length >= 1)
+            {
+                if (char.IsLower(array[0]))
+                {
+                    array[0] = char.ToUpper(array[0]);
+                }
+            }
+            // Scan through the letters, checking for spaces.
+            // ... Uppercase the lowercase letters following spaces.
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i - 1] == ' ')
+                {
+                    if (char.IsLower(array[i]))
+                    {
+                        array[i] = char.ToUpper(array[i]);
+                    }
+                }
+            }
+            return new string(array);
+        }
+
         public async Task<string> Execute()
         {
             string s;
-            if (this.entities.Count > 0)
+            if (this.entities != null)
             {
                 s = "I'll lookup " + this.entities[0].entity;
 
-                // Prep look up topic here
+                //    Prep look up topic here
             }
             else
             {
-                // See if we can work out the look up topic from the query parameters
-                query = query.Replace("lookup", "");
-                query = query.Replace("look up", "");
-                query = query.TrimStart(' ');
-                Debug.WriteLine(query);
-
-                HttpClient client = new HttpClient();
-
-                string urie = WebUtility.UrlEncode(query);
-
-                string uri = "https://en.wikipedia.org/w/api.php?action=query&titles=" + urie + "&prop=revisions&rvprop=content&format=json";
-
-                HttpResponseMessage ressp = await client.GetAsync(new Uri(uri, UriKind.Absolute));
-
-                string res = await ressp.Content.ReadAsStringAsync();
-
-                int start = res.IndexOf("'''");
-                int middle = res.IndexOf('.', start);
-                int end = res.IndexOf('.', middle);
-
-                string basic = res.Substring(start, end);
-                basic = basic.Replace("'", "");
-                basic = basic.Replace("[", "");
-                basic = basic.Replace("]", "");
-                bool test = true;
-                while(test)
-                {
-                    start = basic.IndexOf("<ref");
-                    if (start > 0)
-                    {
-                        end = basic.IndexOf("ref>");
-                        if (end ==-1)
-                        {
-                            end = basic.IndexOf(">");
-                            basic = basic.Remove(start, (end - start) + 2);
-                        }
-                        else
-                            basic = basic.Remove(start, (end - start) + 6);
-                    }
-                    else
-                    { test = false; }
-                }
-                basic = basic.Replace("\\", "");
-                s = basic;
+                s = "looking it up";
             }
-            return s;
+            // See if we can work out the look up topic from the query parameters
+            query = query.Replace("lookup", "");
+            query = query.Replace("look up", "");
+            query = query.TrimStart(' ');
+            Debug.WriteLine(query);
+
+            HttpClient client = new HttpClient();
+
+            //query = UppercaseWords(query);
+
+            string urie = WebUtility.UrlEncode(query);
+
+
+            //string uri = "https://en.wikipedia.org/w/api.php?action=query&titles=" + urie + "&prop=revisions&rvprop=content&format=json";
+            string uri = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=" + urie;
+
+            HttpResponseMessage ressp = await client.GetAsync(new Uri(uri, UriKind.Absolute));
+
+            string res = await ressp.Content.ReadAsStringAsync();
+
+            int start = 0;
+            int end = 0;
+
+            start = res.IndexOf("missing");
+            if (start > 0)
+                return "Topic not found";
+
+            start = res.IndexOf("extract");
+            if (start > 0)
+            {
+                end = res.IndexOf("}}}}");
+            }
+            else
+            {
+                return "Topic not found";
+            }
+
+            start = start + 10;
+            string basic = res.Substring(start);// 10 = extract":"
+
+            basic = basic.Replace("'", "");
+            basic = basic.Replace("[", "");
+            basic = basic.Replace("]", "");
+            basic = basic.Replace("\n", "");
+            basic = basic.Replace(".", " ");
+            basic = basic.Replace("}", "");
+            basic = basic.Replace("\\", "");
+            return basic;
         }
     }
 
@@ -266,8 +304,15 @@ namespace Billy //builtin.intent
 
         private async void ToggleLights()
         {
-            await context.switchConsumer.SetValueAsync(!context.lightStatus);
-            context.lightStatus = !context.lightStatus;
+            try
+            {
+                await context.switchConsumer.SetValueAsync(!context.lightStatus);
+                context.lightStatus = !context.lightStatus;
+            }
+            catch
+            {
+                //
+            }
         }
     }
 
@@ -288,5 +333,7 @@ namespace Billy //builtin.intent
             return "executed";
         }
     }
+
+
 }
 

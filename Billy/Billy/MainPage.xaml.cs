@@ -139,7 +139,7 @@ namespace Billy
             //
             try
             {
-                s = s.Substring(s.IndexOf("Patrick")); // commands must start with Patrick. Removes chatter before commands
+                s = s.Substring(s.IndexOf("patrick")); // commands must start with Patrick. Removes chatter before commands
             }
             catch (Exception e)
             {
@@ -147,7 +147,7 @@ namespace Billy
                 Debug.WriteLine("No Patrick found");
             }
 
-            if (s.Contains("Patrick"))
+            if (s.Contains("patrick"))
             {
                 // Call LUIS with value of s here
 
@@ -156,7 +156,7 @@ namespace Billy
                 //  Look up serice locally or set this up remotely and just return the action
                 HttpClient client = new HttpClient();
 
-                string q = s.Replace("Patrick", ""); //Removed the space at the end of Patrick
+                string q = s.Replace("patrick", ""); //Removed the space at the end of Patrick
 
 
                 if (q.Length == 0) return ""; //Quick fix for BUG
@@ -166,7 +166,7 @@ namespace Billy
 
                 string uri = "https://api.projectoxford.ai/luis/v1/application?id=c996e5b8-a6d7-4d4e-ab78-2de73a2b09cc&subscription-key=4bd17b8ac139489996440aee38e5c34a&q=" + urie;
 
-                HttpResponseMessage ressp = await client.GetAsync(new Uri(uri, UriKind.Absolute));
+                HttpResponseMessage ressp = await client.GetAsync(new Uri(uri, UriKind.Absolute)); 
 
                 string res = await ressp.Content.ReadAsStringAsync();
                 Debug.WriteLine(res);
@@ -180,7 +180,10 @@ namespace Billy
                 {
                     System.Type objType = System.Type.GetType("Billy." + m.intents[0].intent);
                     dynamic intent = System.Activator.CreateInstance(objType);
-                    intent.entities = m.entities;
+                    if (m.entities.Count > 0)
+                        intent.entities = m.entities;
+                    else
+                        intent.entities = null;
                     intent.query = m.query;
                     intent.context = context;
 
