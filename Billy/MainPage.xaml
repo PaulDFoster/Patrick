@@ -1,0 +1,1358 @@
+﻿<Page
+    x:Class="Billy.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Billy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="800" Height="480">
+    <Page.Resources>
+        <Storyboard x:Name="Blink">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.142"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.996"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.142"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="WinkLeft">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.124"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Surprise">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="WinkRight">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.124"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="RollEyes1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="12.02"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="68.923"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-49.691"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-67.323"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="-1.604"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="69.725"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="0.801"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="12.02"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="68.923"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-49.691"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-67.323"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="-1.604"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="69.725"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="0.801"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-47.685"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-60.508"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="60.511"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="70.93"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="2.006"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="1.205"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-47.685"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-60.508"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="60.511"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="70.93"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="2.006"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="1.205"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Normal">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Worried">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle1">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle2">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle3">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle4">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle5">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-52"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-52"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-311.318"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-319.732"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-15.626"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-26.444"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="52"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="52"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-311.318"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-318.53"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="14.424"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="24.04"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="6.01"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle3">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="6.01"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle4">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="6.01"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle5">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="6.01"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-4.808"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle3">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-4.808"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle4">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-4.808"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle5">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-4.808"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Cross">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle1">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle2">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle3">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle4">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle5">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-52"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-52"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-311.318"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-333.758"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-15.626"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="86.558"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="52"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="52"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-311.318"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-332.958"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="14.424"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-88.963"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Laugh">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="135"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="116.21"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="120.217"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="119.415"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="119.415"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="121.018"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="121.018"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="121.018"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-383.092"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-383.092"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-383.092"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-408.738"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-347.828"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-411.142"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-359.048"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-383.893"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-426.37"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-355.041"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-355.041"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-382.29"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="135"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-119.416"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-119.416"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-119.416"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-119.416"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-119.416"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-120.217"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-116.21"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-117.012"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-117.012"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-115.409"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-115.409"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-115.409"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-384.695"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-384.695"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-384.695"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-410.341"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-349.431"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-412.745"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-360.651"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-385.496"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-427.973"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-356.644"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-356.644"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-383.893"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="135"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="117.011"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="116.21"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="120.217"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="119.415"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="119.415"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="121.018"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="121.018"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="121.018"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-324.185"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-324.185"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-324.185"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-349.831"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-288.921"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-352.235"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-300.141"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-324.986"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-367.463"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-296.134"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-296.134"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-323.383"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="135"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-118.614"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-118.614"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-118.614"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-118.614"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-118.614"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-119.415"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-115.408"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-116.21"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-116.21"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-114.607"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-114.607"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-114.607"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-323.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-323.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-323.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-349.431"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-288.521"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-351.835"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-299.741"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-324.586"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-367.063"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-295.734"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-295.734"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-322.983"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="135"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-206.773"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-206.773"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-206.773"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-206.773"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-206.773"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-207.574"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-203.567"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-204.369"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-204.369"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-202.766"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-202.766"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-202.766"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-270.088"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-270.088"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-270.088"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-295.734"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-234.824"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-298.138"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-246.044"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-270.889"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-313.366"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-242.037"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-242.037"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-269.286"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="rectangle5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="135"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="202.365"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="202.365"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="202.365"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="202.365"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="202.365"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="201.564"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="205.571"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="204.769"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="204.769"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="206.372"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="206.372"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="206.372"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-439.193"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-439.193"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-439.193"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-464.839"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-403.929"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-467.243"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-415.149"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-439.994"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-482.471"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-411.142"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="-411.142"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-438.391"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.9">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.8">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle1">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.9">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.8">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle2">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.9">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.8">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle3">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.9">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.8">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle4">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.9">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.8">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle5">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.9">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.8">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-25.646"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="35.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-28.05"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="24.044"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-0.801"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-43.278"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="28.051"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="28.051"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="0.802"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-25.646"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="35.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-28.05"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="24.044"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-0.801"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-43.278"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="28.051"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="28.051"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="0.802"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-0.801"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="3.206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="4.007"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="4.007"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="4.007"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-0.801"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="3.206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="2.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="4.007"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="4.007"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="4.007"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Confused">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="spotEyes">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imgEyes">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="imgLeftEye">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1080"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="imgRightEye">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1080"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Love">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="spotEyes">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.3">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imgEyes">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.3">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imgLeftEye">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imgRightEye">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="imgEyes">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="imgLeftEye">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="imgRightEye">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="imgEyes">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="imgLeftEye">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="imgRightEye">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="ShowImage">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="spotEyes">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imgEyes">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Grid Background="#FFFFFFFF" Margin="0,0,0,-70" Width="800" Height="480">
+        <StackPanel x:Name="spotEyes" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Width="800" Height="480" >
+            <Ellipse x:Name="ellipse" Fill="#FF29292F" HorizontalAlignment="Left" Margin="80,60,0,0" Stroke="Black" Width="160" Height="160" AutomationProperties.Name="LeftEye" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+                <Ellipse.RenderTransform>
+                    <CompositeTransform/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse x:Name="ellipse1" Fill="#FF29292F" HorizontalAlignment="Left" Margin="200,60,0,0" Stroke="Black" Width="160" Height="160" AutomationProperties.Name="RightEye" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+                <Ellipse.RenderTransform>
+                    <CompositeTransform/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Rectangle x:Name="rectangle" Fill="#FFF7F7F9" HorizontalAlignment="Left" Margin="0 ,431,0,0" Width="160" AutomationProperties.Name="LeftTop" RenderTransformOrigin="0.5,0.5" Height="160" VerticalAlignment="Top">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectangle1" Fill="#FFF7F7F9" HorizontalAlignment="Left" Margin="0,431,0,0" Width="160" AutomationProperties.Name="RightTop" RenderTransformOrigin="0.5,0.5" Height="160" VerticalAlignment="Top">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectangle2" Fill="#FFF7F7F9" HorizontalAlignment="Left" Margin="0,431,0,0" Width="160" AutomationProperties.Name="LeftBottom" RenderTransformOrigin="0.5,0.5" Height="160" VerticalAlignment="Top">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectangle3" Fill="#FFF7F7F9" Height="160" Margin="0,598,0,0" VerticalAlignment="Top" AutomationProperties.Name="RightBottom" RenderTransformOrigin="0.5,0.5" Width="160" HorizontalAlignment="Left">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectangle4" Fill="#FFF7F7F9" HorizontalAlignment="Left" Margin="0,598,0,0" Width="160" AutomationProperties.Name="LeftBottom" RenderTransformOrigin="0.5,0.5" Height="160" VerticalAlignment="Top">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectangle5" Fill="#FFF7F7F9" Margin="0,598,260,0" AutomationProperties.Name="RightBottom" RenderTransformOrigin="0.5,0.5" Height="160" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+        </StackPanel>
+        <StackPanel x:Name="imgEyes" Visibility="Collapsed" Orientation="Horizontal" VerticalAlignment="Top" Width="800" Height="280" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <CompositeTransform/>
+            </StackPanel.RenderTransform>
+            <Image x:Name="imgLeftEye" Width="160" Height="160" Margin="80,00,0,0" Source="Assets/heart.jpg" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <CompositeTransform/>
+                </Image.RenderTransform>
+            </Image>
+            <Image x:Name="imgRightEye" Width="160" Height="160" Margin="200,00,0,0" Source="Assets/heart.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <CompositeTransform/>
+                </Image.RenderTransform>
+            </Image>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,150,0,0">
+            <StackPanel Orientation="Horizontal"  Visibility="Collapsed">
+                <TextBlock Text="Recognition Language: " Margin="0,5,10,0"/>
+                <ComboBox x:Name="cbLanguageSelection" Margin="0,5,150,10" Width="186"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0" Padding="0" >
+                <Button x:Name="btnStartTalk" Click="btnStartTalk_Click" IsEnabled="{Binding IsReadyToRecognize}" Margin="0,0,0,0" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Microphone"/>
+                        <TextBlock x:Name="StartTalkButtonText" Text="Start Talk" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnClearText" Click="btnClearText_Click"  IsEnabled="False" Margin="10,0,0,0" Content="Clear Text" />
+            </StackPanel>
+            <TextBox x:Name="dictationTextBox" Margin="-130,50,0,0" IsReadOnly="True" VerticalAlignment="Bottom" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="60" Width="300" TextChanged="dictationTextBox_TextChanged"/>
+            <StackPanel Orientation="Horizontal"  Margin="0,5,0,0">
+                <TextBlock x:Name="checkError" Text="Speech Recog Status:" Margin="0,10,10,5" Visibility="Collapsed"></TextBlock>
+                <TextBox x:Name="errorCheck" FontSize="16" Height="Auto" Margin="0,0,0,0" Visibility="Collapsed" Width="440"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="0,300,0,10"  Visibility="Collapsed">
+
+            <StackPanel Orientation="Vertical" Margin="0,20,0,0" >
+                <TextBlock Text="Original msg Received:" FontSize="16" Height="20"  Margin="0,10,150,0" />
+                <TextBox x:Name="originalmsg" Margin="0,0,0,0" IsReadOnly="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                <TextBlock Text="Translated msg:" FontSize="16" Height="20"  Margin="0,10,150,0" />
+                <TextBox x:Name="ReceivedText" Margin="0,0,0,10" IsReadOnly="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Status Check:" FontSize="16" Height="20" Margin="0,5,10,0" />
+                <TextBox x:Name="StatusText" Text="Idle" FontSize="16" Height="Auto" Margin="0,5,10,0" Width="474" />
+            </StackPanel>
+
+        </StackPanel>
+        <MediaElement x:Name="media" AutoPlay="True" Margin="180,355,161.667,354" MediaEnded="media_MediaEnded" MediaFailed="media_MediaFailed" />
+
+    </Grid>
+</Page>
