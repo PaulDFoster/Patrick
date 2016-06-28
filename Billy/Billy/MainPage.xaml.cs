@@ -119,7 +119,7 @@ namespace Billy
             {
                 recognitionOperation = speechRecognizer.RecognizeAsync();
                 speechRecognitionResult = await recognitionOperation;
-
+                Blink.Begin();
                 if (speechRecognitionResult.Status == SpeechRecognitionResultStatus.Success)
                 {
                     // BUG: Sometimes hits success repetitively and does not listen for input
@@ -248,6 +248,8 @@ namespace Billy
                 context.lightStatus = (bool) x.Value;
 
                 Speak("Things network online");
+                // Wink Left
+                WinkLeft.Begin();
             }
         }
 
