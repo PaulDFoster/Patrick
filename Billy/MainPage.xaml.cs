@@ -58,6 +58,7 @@ namespace Billy
         private string inLanguageSpecificCode = "en";
         private string outLanguageSpecificCode = "en";
 
+        // Call sign under RPI3 IOT Core preview needs to be uncapitalised. Not normal.
         private string callSign = "patrick";
 
         private SpeechRecognizer speechRecognizer;
