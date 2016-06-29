@@ -1258,8 +1258,8 @@
         </Storyboard>
     </Page.Resources>
     <Grid Background="#FFFFFFFF" Margin="0,0,0,-70" Width="800" Height="480">
-        <StackPanel x:Name="spotEyes" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Width="800" Height="480" >
-            <Ellipse x:Name="ellipse" Fill="#FF29292F" HorizontalAlignment="Left" Margin="80,60,0,0" Stroke="Black" Width="160" Height="160" AutomationProperties.Name="LeftEye" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+        <StackPanel x:Name="spotEyes" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Width="600" Height="480" Margin="0">
+            <Ellipse x:Name="ellipse" Fill="#FF29292F" HorizontalAlignment="Left" Margin="40,60,0,0" Stroke="Black" Width="160" Height="160" AutomationProperties.Name="LeftEye" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
                 <Ellipse.RenderTransform>
                     <CompositeTransform/>
                 </Ellipse.RenderTransform>
@@ -1301,11 +1301,11 @@
             </Rectangle>
 
         </StackPanel>
-        <StackPanel x:Name="imgEyes" Visibility="Collapsed" Orientation="Horizontal" VerticalAlignment="Top" Width="800" Height="280" RenderTransformOrigin="0.5,0.5">
+        <StackPanel x:Name="imgEyes" Visibility="Collapsed" Orientation="Horizontal" VerticalAlignment="Top" Width="600" Height="280" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <CompositeTransform/>
             </StackPanel.RenderTransform>
-            <Image x:Name="imgLeftEye" Width="160" Height="160" Margin="80,00,0,0" Source="Assets/heart.jpg" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="imgLeftEye" Width="160" Height="160" Margin="60,00,0,0" Source="Assets/heart.jpg" RenderTransformOrigin="0.5,0.5" >
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -1331,7 +1331,7 @@
                 </Button>
                 <Button x:Name="btnClearText" Click="btnClearText_Click"  IsEnabled="False" Margin="10,0,0,0" Content="Clear Text" />
             </StackPanel>
-            <TextBox x:Name="dictationTextBox" Margin="-130,50,0,0" IsReadOnly="True" VerticalAlignment="Bottom" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="60" Width="300" TextChanged="dictationTextBox_TextChanged"/>
+            <TextBox x:Name="dictationTextBox" Margin="0,50,0,0" IsReadOnly="True" VerticalAlignment="Bottom" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="60" Width="300" TextChanged="dictationTextBox_TextChanged"/>
             <StackPanel Orientation="Horizontal"  Margin="0,5,0,0">
                 <TextBlock x:Name="checkError" Text="Speech Recog Status:" Margin="0,10,10,5" Visibility="Collapsed"></TextBlock>
                 <TextBox x:Name="errorCheck" FontSize="16" Height="Auto" Margin="0,0,0,0" Visibility="Collapsed" Width="440"/>
