@@ -1,0 +1,561 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "Patrick",
+  "desc": "A simple model to support a personal assistant robot",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "SwitchOn"
+    },
+    {
+      "name": "Hello"
+    },
+    {
+      "name": "SwitchOff"
+    },
+    {
+      "name": "Lookup"
+    },
+    {
+      "name": "Joke"
+    },
+    {
+      "name": "Time"
+    },
+    {
+      "name": "Rotate"
+    },
+    {
+      "name": "toggleswitch"
+    },
+    {
+      "name": "Weather"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Topic"
+    }
+  ],
+  "composites": [],
+  "bing_entities": [
+    "geography",
+    "number",
+    "encyclopedia",
+    "datetime"
+  ],
+  "actions": [],
+  "model_features": [
+    {
+      "name": "terms",
+      "mode": true,
+      "words": "machine learning,paul foster,lee stott,amy Nicholson,washing machine,dishwasher,television",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "lookup appendicitis",
+      "intent": "Lookup",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "lookup bmw",
+      "intent": "Lookup",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "turn on the lights",
+      "intent": "SwitchOn",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "turn off the lights",
+      "intent": "SwitchOff",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "get the lights",
+      "intent": "toggleswitch",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "look up machine learning",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "lookup machine learning",
+      "intent": "Lookup",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "switch off everything",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "switch on everything",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "switch off the lights",
+      "intent": "SwitchOff",
+      "entities": []
+    },
+    {
+      "text": "turn the lights on",
+      "intent": "SwitchOn",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "turn the lights off",
+      "intent": "SwitchOff",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "please switch the lights off",
+      "intent": "SwitchOff",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "look",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "switch on the lights",
+      "intent": "SwitchOn",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "turn the lights out",
+      "intent": "SwitchOff",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "look around",
+      "intent": "Rotate",
+      "entities": []
+    },
+    {
+      "text": "exercise your servo",
+      "intent": "Rotate",
+      "entities": []
+    },
+    {
+      "text": "go for a spin",
+      "intent": "Rotate",
+      "entities": []
+    },
+    {
+      "text": "at the lights",
+      "intent": "toggleswitch",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "hit the lights",
+      "intent": "SwitchOn",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "look up machine running",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "no comma sheen winning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "look up machine",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "look up machine honey",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "look up appendicitis",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "wrentit",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ratite",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get the lines",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "no time machine learning",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "make a machine learning",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "hi",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "yo",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "get the light",
+      "intent": "toggleswitch",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "milk on machine learning",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "good",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "rotate",
+      "intent": "Rotate",
+      "entities": []
+    },
+    {
+      "text": "said a lot so",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hey you",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "turn the light off",
+      "intent": "SwitchOff",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "look up machine lining",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "look up bill gates",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "turn off the light",
+      "intent": "SwitchOff",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "turn on the light",
+      "intent": "SwitchOn",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "look up acdc",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "get a life",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "'s we have 's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get the point",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Topic",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "look up the city and then della",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "look up the president obama",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "look up great britain",
+      "intent": "Lookup",
+      "entities": []
+    },
+    {
+      "text": "what is the time",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "what's the time",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "get me the time",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "what time is it",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "get the time",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "tell me the time",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "tell me a joke",
+      "intent": "Joke",
+      "entities": []
+    },
+    {
+      "text": "let's have a joke",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make me laugh",
+      "intent": "Joke",
+      "entities": []
+    },
+    {
+      "text": "make us laugh",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the weather today",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "what is the weather doing",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "will it rain today",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "what is it like outside",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "tell us a joke",
+      "intent": "Joke",
+      "entities": []
+    },
+    {
+      "text": "solstheim you could have souls who has a friend over so quick",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "route 8",
+      "intent": "None",
+      "entities": []
+    }
+  ]
+}
