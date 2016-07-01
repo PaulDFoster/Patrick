@@ -316,6 +316,38 @@ namespace Billy //builtin.intent
         }
     }
 
+    public class Joke : intentBase, IIntent
+    {
+        public async Task<string> Execute()
+        {
+            HttpClient client = new HttpClient();
+            string uri = "http://ppjokeservice.azurewebsites.net/api/jokes";
+
+            HttpResponseMessage ressp = await client.GetAsync(new Uri(uri, UriKind.Absolute));
+
+            string res = await ressp.Content.ReadAsStringAsync();
+
+            return res;
+        }
+    }
+
+    public class Weather : intentBase, IIntent
+    {
+        public async Task<string> Execute()
+        {
+            HttpClient client = new HttpClient();
+            string uri = "http://api.openweathermap.org/data/2.5/weather?appid=1e580b1b403f9cd044477e9e15479e9e&units=metric&q=Cambridge,UK";
+
+            HttpResponseMessage ressp = await client.GetAsync(new Uri(uri, UriKind.Absolute));
+
+            string res = await ressp.Content.ReadAsStringAsync();
+
+            Billy.OpenWeatherMap.OpenWeatherMap weather = JsonConvert.DeserializeObject<Billy.OpenWeatherMap.OpenWeatherMap>(res);
+
+            string msg = "Today it will be " + weather.weather[0].description + " with a maximum temperature of " + weather.main.temp_max;
+            return msg;
+        }
+    }
     public class none : intentBase,IIntent
     {
         public none()
