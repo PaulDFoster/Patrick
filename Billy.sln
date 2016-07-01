@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billy", "Billy\Billy.csproj", "{7FB62164-7A21-44F4-B59F-8CF1497B27BA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "com.microsoft.ZWaveBridge.SwitchBinary.Switch", "..\AllJoynApp1\AllJoynApp1\com.microsoft.ZWaveBridge.SwitchBinary.Switch\com.microsoft.ZWaveBridge.SwitchBinary.Switch.vcxproj", "{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PwmSoftware", "PwmSoftware\PwmSoftware.vcxproj", "{07864646-FA68-4C58-84CF-9470B0428301}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PwmSoftware", "..\PwmSoftware\PwmSoftware.vcxproj", "{07864646-FA68-4C58-84CF-9470B0428301}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "com.microsoft.ZWaveBridge.SwitchBinary.Switch", "AllJoynApp1\AllJoynApp1\com.microsoft.ZWaveBridge.SwitchBinary.Switch\com.microsoft.ZWaveBridge.SwitchBinary.Switch.vcxproj", "{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,18 +37,6 @@ Global
 		{7FB62164-7A21-44F4-B59F-8CF1497B27BA}.Release|x86.ActiveCfg = Release|x86
 		{7FB62164-7A21-44F4-B59F-8CF1497B27BA}.Release|x86.Build.0 = Release|x86
 		{7FB62164-7A21-44F4-B59F-8CF1497B27BA}.Release|x86.Deploy.0 = Release|x86
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|ARM.ActiveCfg = Debug|ARM
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|ARM.Build.0 = Debug|ARM
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x64.ActiveCfg = Debug|x64
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x64.Build.0 = Debug|x64
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x86.ActiveCfg = Debug|Win32
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x86.Build.0 = Debug|Win32
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|ARM.ActiveCfg = Release|ARM
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|ARM.Build.0 = Release|ARM
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x64.ActiveCfg = Release|x64
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x64.Build.0 = Release|x64
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x86.ActiveCfg = Release|Win32
-		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x86.Build.0 = Release|Win32
 		{07864646-FA68-4C58-84CF-9470B0428301}.Debug|ARM.ActiveCfg = Debug|ARM
 		{07864646-FA68-4C58-84CF-9470B0428301}.Debug|ARM.Build.0 = Debug|ARM
 		{07864646-FA68-4C58-84CF-9470B0428301}.Debug|x64.ActiveCfg = Debug|x64
@@ -61,6 +49,18 @@ Global
 		{07864646-FA68-4C58-84CF-9470B0428301}.Release|x64.Build.0 = Release|x64
 		{07864646-FA68-4C58-84CF-9470B0428301}.Release|x86.ActiveCfg = Release|Win32
 		{07864646-FA68-4C58-84CF-9470B0428301}.Release|x86.Build.0 = Release|Win32
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|ARM.Build.0 = Debug|ARM
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x64.ActiveCfg = Debug|x64
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x64.Build.0 = Debug|x64
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x86.ActiveCfg = Debug|Win32
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Debug|x86.Build.0 = Debug|Win32
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|ARM.ActiveCfg = Release|ARM
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|ARM.Build.0 = Release|ARM
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x64.ActiveCfg = Release|x64
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x64.Build.0 = Release|x64
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x86.ActiveCfg = Release|Win32
+		{FAC9B452-64A0-44A8-99E7-88BE1DF2E3D8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
