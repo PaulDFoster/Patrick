@@ -5,7 +5,7 @@
     xmlns:local="using:Billy"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="800" Height="480">
+    mc:Ignorable="d" Width="800" Height="480" Loaded="Page_Loaded">
     <Page.Resources>
         <Storyboard x:Name="Blink">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse">
@@ -1257,7 +1257,7 @@
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Page.Resources>
-    <Grid Background="#FFFFFFFF" Margin="0,0,0,-70" Width="800" Height="480">
+    <Grid Background="#FFFFFFFF" Margin="0,0,0,-70" Width="800" Height="480" >
         <StackPanel x:Name="spotEyes" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Width="600" Height="480" Margin="0">
             <Ellipse x:Name="ellipse" Fill="#FF29292F" HorizontalAlignment="Left" Margin="40,60,0,0" Stroke="Black" Width="160" Height="160" AutomationProperties.Name="LeftEye" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
                 <Ellipse.RenderTransform>
@@ -1332,6 +1332,9 @@
                 <Button x:Name="btnClearText" Click="btnClearText_Click"  IsEnabled="False" Margin="10,0,0,0" Content="Clear Text" />
             </StackPanel>
             <TextBox x:Name="dictationTextBox" Margin="0,50,0,0" IsReadOnly="True" VerticalAlignment="Bottom" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="60" Width="300" TextChanged="dictationTextBox_TextChanged"/>
+            <!--Camera preview-->
+            <CaptureElement Name="PreviewControl" Stretch="Uniform" Width="50" Height="50"/>
+            
             <StackPanel Orientation="Horizontal"  Margin="0,5,0,0">
                 <TextBlock x:Name="checkError" Text="Speech Recog Status:" Margin="0,10,10,5" Visibility="Collapsed"></TextBlock>
                 <TextBox x:Name="errorCheck" FontSize="16" Height="Auto" Margin="0,0,0,0" Visibility="Collapsed" Width="440"/>

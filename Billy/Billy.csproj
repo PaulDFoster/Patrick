@@ -11,7 +11,7 @@
     <AssemblyName>Billy</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -95,18 +95,23 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hardware\AdaFruitTFT.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AudioCapturePermissions.cs" />
-    <Compile Include="Context.cs" />
-    <Compile Include="Intents.cs" />
+    <Compile Include="Hardware\AudioCapturePermissions.cs" />
+    <Compile Include="Intents\Context.cs" />
+    <Compile Include="Intents\IntentHandlers.cs" />
+    <Compile Include="MainPage Face Detection.cs" />
+    <Compile Include="MainPage Services.cs" />
+    <Compile Include="MainPage Sound.cs" />
+    <Compile Include="MainPage LCD Screen.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OpenWeatherMap.cs" />
+    <Compile Include="Intents\OpenWeatherMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WikipediaClass.cs" />
+    <Compile Include="Intents\WikipediaClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -139,19 +144,23 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="WindowsIoT, Version=10.0.10586.0">
-      <Name>Windows IoT Extensions for the UWP</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AllJoynApp1\AllJoynApp1\com.microsoft.ZWaveBridge.SwitchBinary.Switch\com.microsoft.ZWaveBridge.SwitchBinary.Switch.vcxproj">
       <Project>{fac9b452-64a0-44a8-99e7-88be1df2e3d8}</Project>
       <Name>com.microsoft.ZWaveBridge.SwitchBinary.Switch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LuisClientLibrary\LuisClientLibrary.csproj">
+      <Project>{20a86269-f28c-446b-abd7-04fcaf576eea}</Project>
+      <Name>LuisClientLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\PwmSoftware\PwmSoftware.vcxproj">
       <Project>{07864646-fa68-4c58-84cf-9470b0428301}</Project>
       <Name>PwmSoftware</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsIoT, Version=10.0.14393.0">
+      <Name>Windows IoT Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
